@@ -60,15 +60,54 @@ module.exports = {
       skipDryRun: true
       
     },
+    linea: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://rpc.goerli.linea.build`),
+      network_id: 59140,
+      confirmations: 5,
+      networktimeout: 10000000,
+      timeoutBlocks: 200000,
+      skipDryRun: true
+    },
+    goerli: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://rpc.ankr.com/eth_goerli`),
+      network_id: 5,
+      confirmations: 2,
+      timeoutBlocks: 2000,
+      skipDryRun: true
+    },
+    zksynk: { //mainnet
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://mainnet.era.zksync.io`),
+      network_id: 324,
+      confirmations: 2,
+      timeoutBlocks: 2000,
+      skipDryRun: true
+    },
+    scroll: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://alpha-rpc.scroll.io/l2`),
+      network_id: 534353,
+      confirmations: 2,
+      timeoutBlocks: 2000,
+      skipDryRun: true
+    },
     ire: {
       provider: function () {
         return new HDWalletProvider(MNEMONIC, `https://rpc-testnet.5ire.network`);
       },
       network_id: 997,
-      confirmations: 2,
-      timeoutBlocks: 200,
+      confirmations: 1,
+      timeoutBlocks: 2000,
       skipDryRun: true
 
+    },
+    pulse: {
+      provider: function () {
+        return new HDWalletProvider(MNEMONIC, `https://rpc.v4.testnet.pulsechain.com`);
+      },
+      network_id: 943,
+      networktimeout: 10000000,
+      timeoutBlocks: 2000,
+      confirmations: 1,
+      skipDryRun: true
     },
   },
 
